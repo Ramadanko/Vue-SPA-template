@@ -3,7 +3,10 @@ import { useRouter } from 'vue-router'
 import { type RouteGroup, type RouteLink, type RouteDivider } from '@/router/appRoutes'
 
 defineProps({
-  navList: Array<RouteLink | RouteDivider | RouteGroup>
+  navList: {
+    required: true,
+    type: Array<RouteLink | RouteDivider | RouteGroup>
+  }
 })
 
 const router = useRouter()
