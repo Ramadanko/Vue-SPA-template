@@ -16,7 +16,6 @@ class Auth {
   redirectUrl: string = '/'
   TOKEN_KEY: string = 'authToken'
   EXPIRES_AT_KEY: string = 'expiresAt'
-  REFRESH_TOKEN_EXPIRES_AT: string = 'refreshTokenExpiresAt'
 
   login = async (cred: Credentials) => {
     return new Promise<void>((resolve, reject) => {
@@ -31,6 +30,8 @@ class Auth {
   }
 
   logout = () => {
+    localStorage.removeItem(this.TOKEN_KEY)
+    localStorage.removeItem(this.EXPIRES_AT_KEY)
   }
 
   refresh = () => {

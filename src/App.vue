@@ -3,6 +3,7 @@ import NavigationList from '@/components/NavigationList/NavigationList.vue'
 import { ref, onBeforeMount } from 'vue'
 import { RouterView, useRouter } from 'vue-router'
 import Auth from '@/utils/Auth'
+import Logout from '@/components/Logout/Logout.vue'
 
 const router = useRouter()
 const isDrawerOpen = ref(true)
@@ -23,6 +24,7 @@ onBeforeMount(() => {
       <v-app-bar :elevation="2">
         <v-app-bar-nav-icon @click="toggleDrawer" />
         <v-app-bar-title>Logo</v-app-bar-title>
+        <Logout />
       </v-app-bar>
       <v-navigation-drawer v-model="isDrawerOpen">
         <NavigationList />
