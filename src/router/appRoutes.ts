@@ -21,6 +21,13 @@ export type RouteGroup = {
 
 export const appRoutes: Array<RouteDivider | RouteLink | RouteGroup> = [
   {
+    type: 'link',
+    name: 'Login',
+    path: '/login',
+    isDynamic: true,
+    filePath: '../views/Login/Login.vue',
+  },
+  {
     name: 'Dashboard',
     path: '/',
     prependIcon: 'mdi-home',
